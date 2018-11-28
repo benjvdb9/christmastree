@@ -10,7 +10,7 @@
 .idea/checkstyleidea-libs/*
 .idea/checkstyle-idea.xml
 target/
-christmastree.iml
+*.iml
 .idea/**/ workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
