@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/christmastree.iml" filepath="$PROJECT_DIR$/christmastree.iml" />
       <module fileurl="file://$PROJECT_DIR$/ttd6.christmastree.id.iml" filepath="$PROJECT_DIR$/ttd6.christmastree.id.iml" />
     </modules>
   </component>
