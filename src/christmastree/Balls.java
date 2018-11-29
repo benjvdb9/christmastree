@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-package christmastree;
-
 /**
  * This class extendes the Decorator to add the specificity of a ball.
  *

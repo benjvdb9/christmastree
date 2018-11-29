@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-package christmastree;
-
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Scanner;

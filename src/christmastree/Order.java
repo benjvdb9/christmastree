@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-package christmastree;
-
 /**
  * the class which stores client and order info.
  * @author mohamad

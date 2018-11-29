@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-package christmastree;
-
 /**
  * the class which extends garland into a synthetic one.
  * @author Yassine

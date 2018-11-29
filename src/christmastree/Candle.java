@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-package christmastree;
-
 /**
  * This class specializes the decorator with functionnalities from the candle.
  * @author Yassine
