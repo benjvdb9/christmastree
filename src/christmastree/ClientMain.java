@@ -34,7 +34,9 @@ public class ClientMain {
     String name = asker.ask("Client's name :");
     String surname = asker.ask("Client's surname :");
     String deliveryAdress = asker.ask("Client's adress :");
-    Order order = new Order(deliveryAdress, name, surname);
+    Customer customer = new Customer(name, surname);
+    DeliveryAddress address = new DeliveryAddress(deliveryAdress);
+    Order order = new Order(customer, address);
     return order;
   }
 

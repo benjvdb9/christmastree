@@ -17,7 +17,8 @@ public class PerformanceTest {
     @BeforeClass
     public static void setupBeforeClass() {
 
-        order =new Order("31 rue de Keersmaeker","Arthur","Venon");
+        DeliveryAddress address = new DeliveryAddress("31 rue de Keersmaeker");
+        order =new Order(new Customer("Arthur","Venon"), address);
         deco = new Candle(new Balls(tree));
 
     }

@@ -11,47 +11,40 @@
  */
 public class Order {
 
-  private String deliveryAddress;
-  private String name;
-  private String surname;
-  private java.util.Date date = null;
+  private Customer customer;
+  private DeliveryAddress deliveryAddress;
+  private java.util.Date date;
 
   /**
    * ths constructor of the order class.
    * @param deliveryAddress the adress od delivery
-   * @param name name of the client
-   * @param surname surname of the client
+   * @param customer client
    */
-  public Order(String deliveryAddress, String name, String surname) {
+  public Order(Customer customer, DeliveryAddress deliveryAddress) {
 
     this.date = new java.util.Date();
     this.deliveryAddress = deliveryAddress;
-    this.surname = surname;
-    this.name = name;
+    this.customer = customer;
   }
 
-  public void setDeliveryAdress(String address) {
-    this.deliveryAddress = address;
-  }
+  public void setDeliveryAdress(String address) { deliveryAddress.setAddress(address); }
 
   public String getDeliveryAddress() {
-    return this.deliveryAddress;
+    return deliveryAddress.getAddress();
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+  public void setName(String name) { customer.setName(name); }
 
   public String getName() {
-    return this.name;
+    return customer.getName();
   }
 
   public void setSurname(String surname) {
-    this.surname = surname;
+    customer.setSurname(surname);
   }
 
   public String getSurname() {
-    return this.surname;
+    return customer.getSurname();
   }
 
   public java.util.Date getDate() {
