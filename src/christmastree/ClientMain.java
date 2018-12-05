@@ -18,6 +18,7 @@ public class ClientMain {
 
 
 
+  private static Decorator manyDecoration = null;
   Scanner scan = new Scanner(System.in);
 
 
@@ -51,7 +52,6 @@ public class ClientMain {
   public static Decorator treeDecorationStandard(ChrismasTree chrismasTree,
                                                  AskString asker, String choiceTree) {
     Decorator decoration = null;
-    Decorator manyDecoration = null;
     // Decorator Options
 
     String choiceDecoration;
@@ -62,6 +62,7 @@ public class ClientMain {
       if (choiceTree.equals("a")) {
         System.out.println("c: Candle");
       }
+      System.out.println("d: debug");
       System.out.println("q: Quit");
       choiceDecoration = asker.ask("Choose a decoration please: ");
 
@@ -70,10 +71,10 @@ public class ClientMain {
         {
           if (manyDecoration == null) {
             decoration = new Balls(chrismasTree);
-            manyDecoration = decoration;
           } else {
             decoration = new Balls(manyDecoration);
           }
+          manyDecoration = decoration;
 
           // display
           System.out.println(decoration.toString());
@@ -142,6 +143,11 @@ public class ClientMain {
         }
           break;
 
+        case "d": {
+            System.out.println("debugging");
+        }
+          break;
+
         default:
           break;
       } // end of switch
@@ -160,7 +166,6 @@ public class ClientMain {
   public static Decorator treeDecorationPersonalized(ChrismasTree chrismasTree,
                                                      AskString asker, String choiceTree) {
     Decorator decoration = null;
-    Decorator manyDecoration = null;
     String choiceDecoration;
 
 
@@ -275,6 +280,7 @@ public class ClientMain {
           System.out.println(decoration.toString());
         }
           break;
+
         default :
           break;
       } // end of switch
