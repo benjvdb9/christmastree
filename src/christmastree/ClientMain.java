@@ -41,6 +41,10 @@ public class ClientMain {
     return order;
   }
 
+    public static void resetMany() {
+      manyDecoration = null;
+    }
+
   /**
    * this class is used to choose which decoration to be added on the tree.
    * @param asker the class that pass a user input as a variable
@@ -368,8 +372,5 @@ public class ClientMain {
     } while (!choiceTree.equals("q")  && flag == 0); // end of loop
     Bill bill = new Bill(tree, order, Paths.get(".").toAbsolutePath().normalize().toString());
     bill.print();
-
- 
-
   }
 }

@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,6 +9,10 @@ public class ClientMainTest {
 
     private static ClientMain client =new ClientMain();
 
+    @Before
+    public void cleanSlate() {
+        client.resetMany();
+    }
 
     @Test
     public void getOrder() throws Exception {
@@ -37,20 +42,12 @@ public class ClientMainTest {
     public void treeDecorationStandardCandleTest() throws Exception {
 
         AskString asker = mock(AskString.class);
-        when(asker.ask("Choose a decoration please: ")).thenReturn("a","q");
-        Decorator deco = client.treeDecorationStandard(
-                new ArtificialTree("artificiel",23.8,"jaune","bisphenol A"),asker,"a");
-        assertEquals(deco.toString(),"ChrismasTree{TreeDescriptionartificiel " +
-                "BallsDecorator: Balls, price=44.79,TreeColorjaune BallsColor: " +
-                "Red}Balls{ BallsMaterial: Plastic, BallsSize: Small}");
-
-        /*AskString asker = mock(AskString.class);
         when(asker.ask("Choose a decoration please: ")).thenReturn("c","q");
         Decorator deco = client.treeDecorationStandard(
                 new ArtificialTree("artificiel",23.8,"jaune","bisphenol A"),asker,"c");
         assertEquals(deco.toString(),"ChrismasTree{TreeDescriptionartificiel " +
                 "CandleDecorator: Candle, price=40.79,TreeColorjaune CandleColor: " +
-                "White}Candle{lifeTime=5, CandleParfum: Senteurs d'inspiration}");*/
+                "White}Candle{lifeTime=5, CandleParfum: Senteurs d'inspiration}");
     }
 
     @Test
