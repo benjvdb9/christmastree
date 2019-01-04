@@ -2,6 +2,7 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
+import java.util.ArrayList;
 
 
 
@@ -96,7 +97,6 @@ public class ArtificialTreeTest {
         String test_ = tree2.toString();
         assertEquals(test, " ArtificialTree{" + "plasticType: " + "plastic AXC" + '}');
         assertEquals(test_, " ArtificialTree{" + "plasticType: " + "plasticTypeA" + '}');
-
     }
 
 }
