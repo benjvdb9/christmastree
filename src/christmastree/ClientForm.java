@@ -12,8 +12,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 
+/**
+ * this is interface use to put client information
+ */
 public class ClientForm extends JFrame {
 
+    private JFrame frame = new JFrame("Application ChristmasTree");
+
+    /**
+     * constructor client form
+     */
     public ClientForm() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -29,7 +37,6 @@ public class ClientForm extends JFrame {
             setLayout(new GridBagLayout());
             GridBagConstraints gbc = new GridBagConstraints();
 
-            //TitledBorder Connexion position 0,0
             gbc.gridx = 0;
             gbc.gridy = 0;
             gbc.fill = GridBagConstraints.BOTH;
@@ -38,7 +45,6 @@ public class ClientForm extends JFrame {
             signin.setBorder(new CompoundBorder(new TitledBorder("Information client"), new EmptyBorder(4, 4, 4, 4)));
             add(signin, gbc);
 
-            //TitledBorder Inscription position 0,2
             gbc.gridy++;
             AddPanel regist = new AddPanel();
             regist.setBorder(new CompoundBorder(new TitledBorder("Adresse de livraison"), new EmptyBorder(4, 4, 4, 4)));
@@ -124,7 +130,7 @@ public class ClientForm extends JFrame {
 
     // TODO initialisaton JFrame
     private void initComponents() {
-        JFrame frame = new JFrame("Application ChristmasTree");
+        //JFrame frame = new JFrame("Application ChristmasTree");
         JFrame.setDefaultLookAndFeelDecorated(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
@@ -134,10 +140,14 @@ public class ClientForm extends JFrame {
         frame.pack();  // Adapte automatiquement composante dans la fenetre
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        tfcomm.setText("1200 Woluwe Saint Lambert");
+        tfnom.setText("TOKAM FOGUE");
+        tfprenom.setText("Georges");
+        tfrue.setText("Avenue A.J Slegers 376");
     }
 
     // TODO Programme principal
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }
@@ -150,10 +160,14 @@ public class ClientForm extends JFrame {
             @Override
             public void run() {
                 // TODO Appel page connexion inscription
+
                 new ClientForm();
+
+
+                //clfrm.setVisible(true);
             }
         });
-    }*/
+    }
 
     private boolean validationNom(String nom ){
         // TODO Validation nom et prenom
@@ -170,9 +184,8 @@ public class ClientForm extends JFrame {
                 if (validationNom(tfprenom.getText())){
 
                     Order order = new Order(tfrue.getText()+"\n"+ tfcomm.getText(), tfnom.getText()+"  ", tfprenom.getText());
-                    Compte account = new Compte(order);
-                    account.setVisible(true);
-
+                    new Compte(order);
+                    frame.dispose();
 
                 }else {
                     JOptionPane.showMessageDialog(null, "Votre Prenom" );
