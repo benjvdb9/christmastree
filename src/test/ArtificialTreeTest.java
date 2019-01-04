@@ -79,4 +79,24 @@ public class ArtificialTreeTest {
         assertEquals(tree1.getPlasticType(),"plasticType: plastic AXC");
     }
 
+    @Test
+    public void testDecoratorPossible() {
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("Balls");
+        list.add("ElectricGarland");
+        list.add("SyntheticGarland");
+        
+        assertEquals(tree1.decoratorPossible(), list);
+        assertEquals(tree2.decoratorPossible(), list);
+    }
+ 
+    @Test
+    public void testToString() {
+        String test = tree1.toString();
+        String test_ = tree2.toString();
+        assertEquals(test, " ArtificialTree{" + "plasticType: " + "plastic AXC" + '}');
+        assertEquals(test_, " ArtificialTree{" + "plasticType: " + "plasticTypeA" + '}');
+
+    }
+
 }
