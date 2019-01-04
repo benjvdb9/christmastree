@@ -83,7 +83,9 @@ public class ArtificialTreeTest {
     @Test
     public void testSetPlastic() {
         tree1.setPlasticType("plastic type: test");
+        tree2.setPlasticType("plastic type: test");
         assertEquals(tree1.getPlasticType(), "plastic type: test");
+        assertEquals(tree2.getPlasticType(), "plastic type: test");
     }
 
     @Test
