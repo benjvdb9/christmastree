@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-package christmastree;
-
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Scanner;
@@ -20,6 +18,7 @@ public class ClientMain {
 
 
 
+  private static Decorator manyDecoration = null;
   Scanner scan = new Scanner(System.in);
 
 
@@ -36,9 +35,15 @@ public class ClientMain {
     String name = asker.ask("Client's name :");
     String surname = asker.ask("Client's surname :");
     String deliveryAdress = asker.ask("Client's adress :");
-    Order order = new Order(deliveryAdress, name, surname);
+    Customer customer = new Customer(name, surname);
+    DeliveryAddress address = new DeliveryAddress(deliveryAdress);
+    Order order = new Order(customer, address);
     return order;
   }
+
+    public static void resetMany() {
+      manyDecoration = null;
+    }
 
   /**
    * this class is used to choose which decoration to be added on the tree.
@@ -51,7 +56,6 @@ public class ClientMain {
   public static Decorator treeDecorationStandard(ChrismasTree chrismasTree,
                                                  AskString asker, String choiceTree) {
     Decorator decoration = null;
-    Decorator manyDecoration = null;
     // Decorator Options
 
     String choiceDecoration;
@@ -62,6 +66,7 @@ public class ClientMain {
       if (choiceTree.equals("a")) {
         System.out.println("c: Candle");
       }
+      System.out.println("d: debug");
       System.out.println("q: Quit");
       choiceDecoration = asker.ask("Choose a decoration please: ");
 
@@ -70,10 +75,10 @@ public class ClientMain {
         {
           if (manyDecoration == null) {
             decoration = new Balls(chrismasTree);
-            manyDecoration = decoration;
           } else {
             decoration = new Balls(manyDecoration);
           }
+          manyDecoration = decoration;
 
           // display
           System.out.println(decoration.toString());
@@ -142,6 +147,11 @@ public class ClientMain {
         }
           break;
 
+        case "d": {
+            System.out.println("debugging");
+        }
+          break;
+
         default:
           break;
       } // end of switch
@@ -160,7 +170,6 @@ public class ClientMain {
   public static Decorator treeDecorationPersonalized(ChrismasTree chrismasTree,
                                                      AskString asker, String choiceTree) {
     Decorator decoration = null;
-    Decorator manyDecoration = null;
     String choiceDecoration;
 
 
@@ -275,6 +284,7 @@ public class ClientMain {
           System.out.println(decoration.toString());
         }
           break;
+
         default :
           break;
       } // end of switch
@@ -362,8 +372,5 @@ public class ClientMain {
     } while (!choiceTree.equals("q")  && flag == 0); // end of loop
     Bill bill = new Bill(tree, order,"./test");
     bill.print();
-
- 
-
   }
 }

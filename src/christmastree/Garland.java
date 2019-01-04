@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-package christmastree;
 
 /**
  * the class to specialize decorator into garland.

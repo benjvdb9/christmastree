@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-package christmastree;
-
 /**
  * the class used to augment christmasTree.
  * @author Yassine

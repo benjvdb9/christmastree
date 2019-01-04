@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-package christmastree;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

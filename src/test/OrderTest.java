@@ -1,5 +1,4 @@
 
-import christmastree.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -12,8 +11,9 @@ public class OrderTest {
   
     @BeforeClass
     public static void setupBeforeClass() { 
-        
-        order =new Order("31 rue de Keersmaeker","Arthur","Venon");
+
+        DeliveryAddress address = new DeliveryAddress("31 rue de Keersmaeker");
+        order =new Order(new Customer("Arthur","Venon"), address);
     }
 
     @Test

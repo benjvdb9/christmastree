@@ -1,13 +1,18 @@
+import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import org.junit.BeforeClass;
-import christmastree.*;
-import static org.mockito.Mockito.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class ClientMainTest {
 
     private static ClientMain client =new ClientMain();
 
+    @Before
+    public void cleanSlate() {
+        client.resetMany();
+    }
 
     @Test
     public void getOrder() throws Exception {
