@@ -18,10 +18,7 @@ import java.util.Scanner;
  */
 public class ClientMain {
 
-
-
   Scanner scan = new Scanner(System.in);
-
 
   /**
    * the order returned contains the client's info; the delivery adress and when it was done.
@@ -360,10 +357,8 @@ public class ClientMain {
       }
 
     } while (!choiceTree.equals("q")  && flag == 0); // end of loop
-    Bill bill = new Bill(tree, order, Paths.get(".").toAbsolutePath().normalize().toString());
+    Bill bill = new Bill(tree, order, "./outputfile.txt");
     bill.print();
-
- 
 
   }
 }
