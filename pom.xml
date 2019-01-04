@@ -11,12 +11,12 @@
    <description>This is a simple Maven Project</description>
    <properties>
       <jre.level>1.8</jre.level>
-      <jdk.level>1.8</jdk.level>   
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <jdk.level>1.8</jdk.level>
+       
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  
    </properties>
-
-   
-   <build>
+<build>
          <finalName>ttd6</finalName>
   <sourceDirectory>src/christmastree</sourceDirectory>
          <testSourceDirectory>src/test</testSourceDirectory>
@@ -24,13 +24,13 @@
         <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-                 <version>3.5.1</version>
+                 <version>2.3.2</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
       </plugin>
-      <plugin>
+             <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
         <version>3.1.0</version>
@@ -69,15 +69,13 @@
           ...
         </configuration>
          </plugin>
-
-		 
     </plugins>
   </build>
    <dependencies>
       <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.2</version>
+            <version>4.11</version>
       </dependency>
 	   <dependency>
     <groupId>org.mockito</groupId>
