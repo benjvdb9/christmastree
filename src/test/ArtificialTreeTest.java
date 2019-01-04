@@ -81,6 +81,13 @@ public class ArtificialTreeTest {
     }
 
     @Test
+    public void testSetPlastic() {
+        tree1.setPlasticType('plastic type: test');
+
+        assertEquals(tree1.getPlasticType(), 'plastic type: test');
+    }
+
+    @Test
     public void testDecoratorPossible() {
         ArrayList<String> list = new ArrayList<String>();
         list.add("Balls");
