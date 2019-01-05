@@ -92,4 +92,19 @@ public class BallsTest {
     public void testGeSize() {
         assertEquals(ball1.getSize()," BallsSize: small");
     }
+
+    @Test
+    public void testToString() {
+        String to_string = "ChrismasTree{TreeDescriptionArtificialTree BallsDecorator: ball, " +
+                "price=40.5,TreeColorred BallsColor: Yellow}Balls{ BallsMaterial: mat, BallsSize: small}";
+        assertEquals(ball1.toString(), to_string);
+    }
+
+    @Test
+    public void testSetMaterial() {
+        ball1.setMaterial("TEST");
+        ball2.setMaterial("TEST2");
+        assertEquals(ball1.getMaterial(), "TEST");
+        assertEquals(ball2.getMaterial(), "TEST2");
+    }
 }
