@@ -2,6 +2,7 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
+import java.util.ArrayList;
 
 
 
@@ -77,6 +78,33 @@ public class ArtificialTreeTest {
     @Test
     public void testGetPlastic() {
         assertEquals(tree1.getPlasticType(),"plasticType: plastic AXC");
+    }
+
+    @Test
+    public void testSetPlastic() {
+        tree1.setPlasticType("plastic type: test");
+        tree2.setPlasticType("plastic type: test");
+        assertEquals(tree1.getPlasticType(), "plastic type: test");
+        assertEquals(tree2.getPlasticType(), "plastic type: test");
+    }
+
+    @Test
+    public void testDecoratorPossible() {
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("Balls");
+        list.add("ElectricGarland");
+        list.add("SyntheticGarland");
+        
+        assertEquals(tree1.decoratorPossible(), list);
+        assertEquals(tree2.decoratorPossible(), list);
+    }
+ 
+    @Test
+    public void testToString() {
+        String test = tree1.toString();
+        String test_ = tree2.toString();
+        assertEquals(test, " ArtificialTree{" + "plasticType: " + "plastic AXC" + '}');
+        assertEquals(test_, " ArtificialTree{" + "plasticType: " + "plasticTypeA" + '}');
     }
 
 }
