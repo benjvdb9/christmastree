@@ -4,9 +4,12 @@
  * and open the template in the editor.
  */
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
+
+import java.io.IOException;
 
 /**
  *
@@ -18,11 +21,14 @@ public class BillTest {
     Customer customer = new Customer("John", "Doe");
     DeliveryAddress deliveryAddress = new DeliveryAddress("New York");
     Order order = new Order(customer, deliveryAddress);
-    Bill bill = new Bill(treeDecorator, order, "./billTest");
+
+    @Before
+    public void init() throws IOException {
+        Bill bill = new Bill(treeDecorator, order,"./test");
+    }
 
     @Test
     public void  testBallsWithArguments() {
-        
-        assertNotNull(ball1);
+        //assertNotNull(ball1);
     }
 }
