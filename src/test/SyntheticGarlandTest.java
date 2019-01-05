@@ -10,10 +10,9 @@ public class SyntheticGarlandTest {
 
     @BeforeClass
     public static void setupBeforeClass() {
-
-
         tree = new ArtificialTree("artificiel",23.8,"jaune","bisphenol A");
         garland = new SyntheticGarland(tree);
+        SyntheticGarland garland2 = new SyntheticGarland("1", "2", "3", 4, 5, tree);
     }
 
     @Test
