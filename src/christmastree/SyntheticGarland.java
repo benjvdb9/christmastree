@@ -24,14 +24,14 @@ public class SyntheticGarland extends Garland {
     setColor(
         treeDecorator.getColor() == null
             ? ""
-            : treeDecorator.getColor() + " SyntheticGarlandColor: " + "yellow");
-    setDescription(treeDecorator.getDescription() + " SyntheticGarlandDecorator: " + "Garland");
+            : treeDecorator.getColor() + "\nSyntheticGarlandColor: " + "yellow");
+    setDescription(treeDecorator.getDescription() + "\nSyntheticGarlandDecorator: " + "Garland");
     setPrice(treeDecorator.getPrice() + 10.99);
     setLength(15);
     setPaillette(
         getPaillette() == null
-            ? "" + " SyntheticGarlandPaillette: " + "Square"
-            : getPaillette() + " SyntheticGarlandPaillette: " + "Square");
+            ? "" + "\nSyntheticGarlandPaillette: " + "Square"
+            : getPaillette() + "\nSyntheticGarlandPaillette: " + "Square");
   }
 
   /**
@@ -54,14 +54,14 @@ public class SyntheticGarland extends Garland {
     setColor(
         treeDecorator.getColor() == null
             ? ""
-            : treeDecorator.getColor() + " SyntheticGarlandColor: " + color);
-    setDescription(treeDecorator.getDescription() + " SyntheticGarlandDecorator: " + description);
+            : treeDecorator.getColor() + "\nSyntheticGarlandColor: " + color);
+    setDescription(treeDecorator.getDescription() + "\nSyntheticGarlandDecorator: " + description);
     setPrice(treeDecorator.getPrice() + price);
     setLength(length);
     this.paillette =
         getPaillette() == null
-            ? "" + " SyntheticGarlandPaillette: " + paillette
-            : getPaillette() + " SyntheticGarlandPaillette:: " + paillette;
+            ? "" + "\nSyntheticGarlandPaillette: " + paillette
+            : getPaillette() + "\nSyntheticGarlandPaillette:: " + paillette;
   }
 
   // Getters and setters
@@ -75,6 +75,6 @@ public class SyntheticGarland extends Garland {
 
   @Override
   public String toString() {
-    return super.toString() + " SyntheticGarland{" + paillette + '}';
+    return super.toString() + "\nSyntheticGarland{" + paillette + '}';
   }
 }

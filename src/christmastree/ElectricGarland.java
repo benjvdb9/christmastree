@@ -24,9 +24,9 @@ public class ElectricGarland extends Garland {
     setColor(
         treeDecorator.getColor() == null
             ? ""
-            : treeDecorator.getColor() + " ElectricGarlandColor: " + "White");
+            : treeDecorator.getColor() + "\nElectricGarlandColor: " + "White");
     setDescription(
-        treeDecorator.getDescription() + " ElectricGarlandDecorator: " + "ElectricGarland");
+        treeDecorator.getDescription() + "\nElectricGarlandDecorator: " + "ElectricGarland");
     setPrice(treeDecorator.getPrice() + 36.99);
     setLength(15);
     setHasBlink(true);
@@ -52,8 +52,8 @@ public class ElectricGarland extends Garland {
     setColor(
         treeDecorator.getColor() == null
             ? ""
-            : treeDecorator.getColor() + " ElectricGarlandColor: " + color);
-    setDescription(treeDecorator.getDescription() + " ElectricGarlandDecorator: " + description);
+            : treeDecorator.getColor() + "\nElectricGarlandColor: " + color);
+    setDescription(treeDecorator.getDescription() + "\nElectricGarlandDecorator: " + description);
     setPrice(treeDecorator.getPrice() + price);
     setLength(length);
     this.hasBlink = hasBlink;
@@ -71,6 +71,6 @@ public class ElectricGarland extends Garland {
 
   @Override
   public String toString() {
-    return super.toString() + " ElectricGarland{" + "hasBlink=" + hasBlink + '}';
+    return super.toString() + "\nElectricGarland{" + "hasBlink=" + hasBlink + '}';
   }
 }

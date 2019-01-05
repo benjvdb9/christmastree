@@ -19,9 +19,6 @@ public class ClientForm extends JFrame {
 
     private JFrame frame = new JFrame("Application ChristmasTree");
 
-    /**
-     * constructor client form
-     */
     public ClientForm() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -159,12 +156,7 @@ public class ClientForm extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                // TODO Appel page connexion inscription
-
                 new ClientForm();
-
-
-                //clfrm.setVisible(true);
             }
         });
     }

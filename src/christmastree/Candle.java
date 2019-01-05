@@ -27,14 +27,14 @@ public class Candle extends Decorator {
     setColor(
         treeDecorator.getColor() == null
             ? ""
-            : treeDecorator.getColor() + " CandleColor: " + "White");
-    setDescription(treeDecorator.getDescription() + " CandleDecorator: " + "Candle");
+            : treeDecorator.getColor() + "\nCandleColor: " + "White");
+    setDescription(treeDecorator.getDescription() + "\nCandleDecorator: " + "Candle");
     setPrice(treeDecorator.getPrice() + 16.99);
     setLifeTime(5);
     setParfum(
         getParfum() == null
-            ? "" + " CandleParfum: " + "Senteurs d'inspiration"
-            : getParfum() + " CandleParfum: " + "Senteurs d'inspiration");
+            ? "" + "\nCandleParfum: " + "Senteurs d'inspiration"
+            : getParfum() + "\nCandleParfum: " + "Senteurs d'inspiration");
   }
 
   /**
@@ -59,14 +59,14 @@ public class Candle extends Decorator {
     setColor(
         treeDecorator.getColor() == null
             ? ""
-            : treeDecorator.getColor() + " CandleColor: " + color);
-    setDescription(treeDecorator.getDescription() + " CandleDecorator: " + description);
+            : treeDecorator.getColor() + "\nCandleColor: " + color);
+    setDescription(treeDecorator.getDescription() + "\nCandleDecorator: " + description);
     setPrice(treeDecorator.getPrice() + price);
     this.lifeTime = lifeTime;
     this.parfum =
         getParfum() == null
-            ? "" + " CandleParfum: " + parfum
-            : getParfum() + " CandleParfum: " + parfum;
+            ? "" + "\nCandleParfum: " + parfum
+            : getParfum() + "\nCandleParfum: " + parfum;
   }
 
   // Getters and Setters
@@ -89,6 +89,6 @@ public class Candle extends Decorator {
 
   @Override
   public String toString() {
-    return super.toString() + "Candle{" + "lifeTime=" + lifeTime + "," + parfum + '}';
+    return super.toString() + "\nCandle{" + "lifeTime=" + lifeTime + "," + parfum + '}';
   }
 }

@@ -3,21 +3,23 @@ package christmastree;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 
+/**
+ * Form use to complete command
+ */
 public class Compte extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
     private JFrame frame = new JFrame("Application ChristmasTree");
-    public JComboBox<String> jcdeco;
-    public JComboBox<String> jcgo;
-    public JComboBox<String> jctycmd;
-    public JComboBox<String> jccmd;
+    private JComboBox<String> jcdeco;
+    private JComboBox<String> jcgo;
+    private JComboBox<String> jctycmd;
+    private JComboBox<String> jccmd;
     Order neworder = null;
 
     ChrismasTree tree = null;
@@ -51,7 +53,10 @@ public class Compte extends JFrame implements ActionListener {
         lblocal.setText(address[1]);
         neworder = order;
     }
-    // TODO initialisaton JFrame
+
+    /**
+     * Initialisation component
+     */
     private void initComponents() {
         JFrame.setDefaultLookAndFeelDecorated(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -111,7 +116,6 @@ public class Compte extends JFrame implements ActionListener {
             gbc.gridwidth = 1;
             gbc.anchor = GridBagConstraints.WEST;
             add(btretour, gbc);
-
             btretour.addActionListener(new RetListener());
 
             gbc.gridx = 1;
@@ -130,6 +134,9 @@ public class Compte extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * Panel in client information
+     */
     protected class ClientPanel extends JPanel {
 
         ClientPanel() {
@@ -151,10 +158,12 @@ public class Compte extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Panel use to selected commande option
+     */
     public class ComPanel extends JPanel {
 
         ComPanel() {
-
 
             setLayout(new GridBagLayout());
             GridBagConstraints gbc = new GridBagConstraints();
@@ -166,8 +175,6 @@ public class Compte extends JFrame implements ActionListener {
             gbc.anchor = GridBagConstraints.CENTER;
             add(lbcomd, gbc);
 
-
-            //jccmd.setSelectedIndex(0);
             gbc.gridx = 0;
             gbc.gridy = 1;
             gbc.fill = GridBagConstraints.BOTH;
@@ -179,8 +186,6 @@ public class Compte extends JFrame implements ActionListener {
             gbc.anchor = GridBagConstraints.WEST;
             add(lbtycom, gbc);
 
-
-            //jctycmd.setSelectedIndex(0);
             gbc.gridx = 0;
             gbc.gridy = 3;
             add(jctycmd, gbc);
@@ -190,29 +195,25 @@ public class Compte extends JFrame implements ActionListener {
             gbc.anchor = GridBagConstraints.WEST;
             add(lbgo, gbc);
 
-
-            //jcgo.setSelectedIndex(0);
             gbc.gridx = 0;
             gbc.gridy = 5;
             add(jcgo, gbc);
 
             gbc.gridx = 0;
             gbc.gridy = 6;
-            //gbc.fill = GridBagConstraints.NONE;
             gbc.anchor = GridBagConstraints.WEST;
             add(lbdeco, gbc);
 
-
-            //jcdeco.setSelectedIndex(0);
             gbc.gridx = 0;
             gbc.gridy = 7;
             add(jcdeco, gbc);
-
-
         }
 
     }
 
+    /**
+     * Panel resum command
+     */
     public class ResPanel extends JPanel {
 
         ResPanel(){
@@ -227,8 +228,6 @@ public class Compte extends JFrame implements ActionListener {
             taresum.setFont(new Font("Serif", Font.ITALIC, 13));
             taresum.setLineWrap(true);       // wrap line
             taresum.setWrapStyleWord(true);  // wrap line at word boundary
-            //tArea.setBackground(new Color(224, 224, 224)); // light blue
-            // Wrap the JTextArea inside a JScrollPane
             JScrollPane tAreaScrollPane = new JScrollPane(taresum);
             tAreaScrollPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 1));
             tAreaScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -247,11 +246,13 @@ public class Compte extends JFrame implements ActionListener {
     }
 
     /**
-     * @param chrismasTree
-     * @param decosel
-     * @param decgop
-     * @param choiceTree
-     * @return
+     * this class is used to choose which decoration to be added on the tree.
+     * @param chrismasTree the christmastree to be augmented
+     * @param decosel the type of decoration select
+     * @param decgop decoration garland option
+     * @param choiceTree the type of tree chosen
+     *
+     * @return the decorated chrismastree
      */
     public static Decorator treeDecorationStandard(ChrismasTree chrismasTree,
                                                    String decosel,String decgop, String choiceTree) {
@@ -259,20 +260,18 @@ public class Compte extends JFrame implements ActionListener {
         Decorator manyDecoration = null;
         // Decorator Options
         switch (decosel) {
-            case "Balls":
-            {
+            case "Balls": {
                 if (manyDecoration == null) {
                     decoration = new Balls(chrismasTree);
                     manyDecoration = decoration;
                 } else {
                     decoration = new Balls(manyDecoration);
                 }
-
             }
             break;
 
-            case "Garland":
-            {
+            case "Garland": {
+                // garland option
                 switch (decgop) {
                     case "Electric Garland": {
 
@@ -303,8 +302,7 @@ public class Compte extends JFrame implements ActionListener {
             }
             break;
 
-            case "Candle":
-            {
+            case "Candle": {
 
                 if (manyDecoration == null) {
                     decoration = new Candle(chrismasTree);
@@ -323,7 +321,8 @@ public class Compte extends JFrame implements ActionListener {
 
 
     /**
-     * @param e
+     * this class is used to implement event JCombobox.
+     * @param e event
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -341,29 +340,25 @@ public class Compte extends JFrame implements ActionListener {
                 switch (choiceTree){
                     case "Natural tree":{
                         tree = new NaturalTree();
-                        String decosel = (String) jcdeco.getSelectedItem();
-                        String decgop = (String) jcgo.getSelectedItem();
-                        deco = treeDecorationStandard(tree,decosel,decgop,choiceTree);
-
                     }
                     break;
                     case "Artificial tree":{
-
                         tree = new ArtificialTree();
-                        String decosel = (String) jcdeco.getSelectedItem();
-                        String decgop = (String) jcgo.getSelectedItem();
-                        deco = treeDecorationStandard(tree,decosel,decgop,choiceTree);
-
                     }
                     break;
                     default:
                         break;
                 }
 
-                taresum.append(deco.getTreeDecorator().getDescription());
-                taresum.append("\n" + deco.getTreeDecorator().getColor());
-                taresum.append("\nPrice = "+String.valueOf(deco.getTreeDecorator().getPrice()));
-                taresum.append("\n" + deco.getTreeDecorator());
+                String decosel = (String) jcdeco.getSelectedItem();
+                String decgop = (String) jcgo.getSelectedItem();
+                deco = treeDecorationStandard(tree,decosel,decgop,choiceTree);
+
+                //taresum.append(deco.getTreeDecorator().getDescription());
+                //taresum.append("\n" + deco.getTreeDecorator().getColor());
+                //taresum.append("\nPrice = " + String.valueOf(deco.getTreeDecorator().getPrice()));
+                //taresum.append("\n" + deco.getTreeDecorator());
+                taresum.append("\n" + deco.toString());
 
             }
             break;
