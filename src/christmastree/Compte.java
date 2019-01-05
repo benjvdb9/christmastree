@@ -3,6 +3,7 @@ package christmastree;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
@@ -13,11 +14,14 @@ public class Compte extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
     private JFrame frame = new JFrame("Application ChristmasTree");
-    private JComboBox<String> jcdeco;
-    private JComboBox<String> jcgo;
-    private JComboBox<String> jctycmd;
-    private JComboBox<String> jccmd;
-    private Order neworder = null;
+    public JComboBox<String> jcdeco;
+    public JComboBox<String> jcgo;
+    public JComboBox<String> jctycmd;
+    public JComboBox<String> jccmd;
+    Order neworder = null;
+
+    ChrismasTree tree = null;
+    String choiceTree = null;
 
 
     public Compte(Order order) {
@@ -36,6 +40,9 @@ public class Compte extends JFrame implements ActionListener {
         jcgo.addActionListener(this);
         jcdeco.addActionListener(this);
 
+        jcdeco.setEnabled(true);
+        jcgo.setEnabled(true);
+
         initComponents();
         this.setLocationRelativeTo(null);
         lbnom.setText(order.getName() + order.getSurname());
@@ -49,7 +56,7 @@ public class Compte extends JFrame implements ActionListener {
         JFrame.setDefaultLookAndFeelDecorated(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
-        frame.setSize(480, 390);
+        frame.setSize(540, 400);
         frame.setResizable(false);
         frame.add(new FormCompte());
         //frame.pack();  // Adapte automatiquement composante dans la fenetre
@@ -202,7 +209,6 @@ public class Compte extends JFrame implements ActionListener {
             add(jcdeco, gbc);
 
 
-
         }
 
     }
@@ -215,7 +221,7 @@ public class Compte extends JFrame implements ActionListener {
             gbc.insets = new Insets(5, 5, 5, 5); // marge entre composants
 
 
-            taresum.setColumns(20);
+            taresum.setColumns(30);
             taresum.setRows(18);
             taresum.setEditable(false);
             taresum.setFont(new Font("Serif", Font.ITALIC, 13));
@@ -240,11 +246,143 @@ public class Compte extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * @param chrismasTree
+     * @param decosel
+     * @param decgop
+     * @param choiceTree
+     * @return
+     */
+    public static Decorator treeDecorationStandard(ChrismasTree chrismasTree,
+                                                   String decosel,String decgop, String choiceTree) {
+        Decorator decoration = null;
+        Decorator manyDecoration = null;
+        // Decorator Options
+        switch (decosel) {
+            case "Balls":
+            {
+                if (manyDecoration == null) {
+                    decoration = new Balls(chrismasTree);
+                    manyDecoration = decoration;
+                } else {
+                    decoration = new Balls(manyDecoration);
+                }
+
+            }
+            break;
+
+            case "Garland":
+            {
+                switch (decgop) {
+                    case "Electric Garland": {
+
+                        if (manyDecoration == null) {
+                            decoration = new ElectricGarland(chrismasTree);
+                            manyDecoration = decoration;
+                        } else {
+                            decoration = new ElectricGarland(manyDecoration);
+                        }
+                    }
+                    break;
+
+                    case "Synthetic Garland":
+                    {
+
+                        if (manyDecoration == null) {
+                            decoration = new SyntheticGarland(chrismasTree);
+                            manyDecoration = decoration;
+                        } else {
+                            decoration = new SyntheticGarland(manyDecoration);
+                        }
+
+                    }
+                    break;
+                    default:
+                        break;
+                } // end of switch
+            }
+            break;
+
+            case "Candle":
+            {
+
+                if (manyDecoration == null) {
+                    decoration = new Candle(chrismasTree);
+                    manyDecoration = decoration;
+                } else {
+                    decoration = new Candle(manyDecoration);
+                }
+            }
+            break;
+
+            default:
+                break;
+        } // end of switch
+        return decoration;
+    }
+
+
+    /**
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        String commandType = (String) jctycmd.getSelectedItem();
+        String choiceTree = (String) jccmd.getSelectedItem();
+        taresum.setText("");
+        Decorator deco = null;
+
+        jcdeco.setEnabled(true);
+        jcgo.setEnabled(true);
+
+        switch (commandType){
+            case "Standard":{
+                switch (choiceTree){
+                    case "Natural tree":{
+                        tree = new NaturalTree();
+                        String decosel = (String) jcdeco.getSelectedItem();
+                        String decgop = (String) jcgo.getSelectedItem();
+                        deco = treeDecorationStandard(tree,decosel,decgop,choiceTree);
+
+                    }
+                    break;
+                    case "Artificial tree":{
+
+                        tree = new ArtificialTree();
+                        String decosel = (String) jcdeco.getSelectedItem();
+                        String decgop = (String) jcgo.getSelectedItem();
+                        deco = treeDecorationStandard(tree,decosel,decgop,choiceTree);
+
+                    }
+                    break;
+                    default:
+                        break;
+                }
+
+                taresum.append(deco.getTreeDecorator().getDescription());
+                taresum.append("\n" + deco.getTreeDecorator().getColor());
+                taresum.append("\nPrice = "+String.valueOf(deco.getTreeDecorator().getPrice()));
+                taresum.append("\n" + deco.getTreeDecorator());
+
+            }
+            break;
+            case "personalized":{
+                taresum.append("No implement");
+            }
+            break;
+            default:
+                break;
+        }
+
+        //Bill bill = new Bill(tree, neworder, "./outputfile.txt");
+        //taresum.append(bill.getbill());
+
     }
 
+    /**
+     *
+     */
     public class QuitListener implements ActionListener{
         // TODO Action sur Bouton Quitter
         @SuppressWarnings("deprecation")
@@ -273,7 +411,6 @@ public class Compte extends JFrame implements ActionListener {
 
         }
     }
-
     private JLabel lbnom = new JLabel();
     private JLabel lbrue = new JLabel();
     private JLabel lblocal = new JLabel();

@@ -10,6 +10,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 /**
  * This class's purpose is to save a command of a christmas tree in the format of a billing where,
@@ -172,5 +173,15 @@ public class Bill {
     addDecorator(description, color);
     addPrice();
     close();
+  }
+  public String getbill(){
+
+    String allorder = null;
+    allorder = "New command\n" + order.getName() + "" + order.getSurname() + "\n" + order.getDeliveryAddress()
+            + "\n\n" + order.getDate()+"\n"+ parserDescription()[1] +" "+parserDescription()[2]
+            +" "+"\n Color: "+" "+ parserColor()[1]+" "+"\n"
+            +"Price =  " + this.toBePrinted.getPrice()+" euro\n";
+
+    return allorder;
   }
 }
