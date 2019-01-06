@@ -37,8 +37,8 @@ public class NaturalTree extends ChrismasTree {
       String description, double price, String color, String treeType, int lifeTime) {
     setDescription(" TreeDescription: " + description);
     setPrice(price);
-    setColor(" TreeColor: " + color);
-    this.treeType = " TreeType: " + treeType;
+    setColor("\nTreeColor: " + color);
+    this.treeType = "\nTreeType: " + treeType;
     this.lifeTime = lifeTime;
   }
 
@@ -62,6 +62,6 @@ public class NaturalTree extends ChrismasTree {
   @Override
   public String toString() {
     super.toString();
-    return " NaturalTree{" + treeType + ", lifeTime=" + lifeTime + '}';
+    return "\nNaturalTree{" + treeType + ", lifeTime=" + lifeTime + '}';
   }
 }

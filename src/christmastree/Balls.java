@@ -25,15 +25,15 @@ public class Balls extends Decorator {
   public Balls(ChrismasTree treeDecorator) {
     super(treeDecorator);
     setColor(
-        treeDecorator.getColor() == null ? "" : treeDecorator.getColor() + " BallsColor: " + "Red");
-    setDescription(treeDecorator.getDescription() + " BallsDecorator: " + "Balls");
+        treeDecorator.getColor() == null ? "" : treeDecorator.getColor() + "\nBallsColor: " + "Red");
+    setDescription(treeDecorator.getDescription() + "\nBallsDecorator: " + "Balls");
     setPrice(treeDecorator.getPrice() + 20.99);
-    /*setMaterial(
+    setMaterial(
         getMaterial() == null
-            ? "" + " BallsMaterial: " + "Plastic"
-            : getMaterial() + " BallsMaterial: " + "Plastic");*/
+            ? "" + "\nBallsMaterial: " + "Plastic"
+            : getMaterial() + "\nBallsMaterial: " + "Plastic");
     setSize(
-        getSize() == null ? "" + " BallsSize: " + "Small" : getSize() + " BallsSize: " + "Small");
+        getSize() == null ? "" + "\nBallsSize: " + "Small" : getSize() + " BallsSize: " + "Small");
   }
 
   /**
@@ -57,15 +57,15 @@ public class Balls extends Decorator {
       ChrismasTree treeDecorator) {
     super(treeDecorator);
     setColor(
-        treeDecorator.getColor() == null ? "" : treeDecorator.getColor() + " BallsColor: " + color);
-    setDescription(treeDecorator.getDescription() + " BallsDecorator: " + description);
+        treeDecorator.getColor() == null ? "" : treeDecorator.getColor() + "\nBallsColor: " + color);
+    setDescription(treeDecorator.getDescription() + "\nBallsDecorator: " + description);
 
     setPrice(treeDecorator.getPrice() + price);
-    this.material = "" + " BallsMaterial: " + material;
-        /*getMaterial() == null
-            ? "" + " BallsMaterial: " + material
-            : getMaterial() + " BallsMaterial: " + material;*/
-    this.size = getSize() == null ? "" + " BallsSize: " + size : getSize() + " BallsSize: " + size;
+    this.material =
+        getMaterial() == null
+            ? "" + "\nBallsMaterial: " + material
+            : getMaterial() + "\nBallsMaterial: " + material;
+    this.size = getSize() == null ? "" + "\nBallsSize: " + size : getSize() + "\nBallsSize: " + size;
   }
 
   // Getters and setters
@@ -88,6 +88,6 @@ public class Balls extends Decorator {
   @Override
   public String toString() {
 
-    return super.toString() + "Balls{" + material + "," + size + '}';
+    return super.toString() + "\nBalls{" + material + "," + size + '}';
   }
 }

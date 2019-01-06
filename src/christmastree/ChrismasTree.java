@@ -40,6 +40,6 @@ public abstract class ChrismasTree {
 
   @Override
   public String toString() {
-    return "ChrismasTree{" + description + ", price=" + price + "," + color + '}';
+    return "ChrismasTree \n" + description + "\nprice = " + price + "\n" + color ;
   }
 }

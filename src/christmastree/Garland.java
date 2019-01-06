@@ -23,8 +23,8 @@ public class Garland extends Decorator {
     setColor(
         treeDecorator.getColor() == null
             ? ""
-            : treeDecorator.getColor() + " GarlandColor: " + "blue");
-    setDescription(treeDecorator.getDescription() + " GarlandDecorator: " + "Garland");
+            : treeDecorator.getColor() + "\nGarlandColor: " + "blue");
+    setDescription(treeDecorator.getDescription() + "\nGarlandDecorator: " + "Garland");
     setPrice(treeDecorator.getPrice() + 12.99);
     setLength(100);
   }
@@ -43,8 +43,8 @@ public class Garland extends Decorator {
     setColor(
         treeDecorator.getColor() == null
             ? ""
-            : treeDecorator.getColor() + " GarlandColor: " + color);
-    setDescription(treeDecorator.getDescription() + " GarlandDecorator: " + description);
+            : treeDecorator.getColor() + "\nGarlandColor: " + color);
+    setDescription(treeDecorator.getDescription() + "\nGarlandDecorator: " + description);
     setPrice(treeDecorator.getPrice() + price);
     this.length = length;
   }
@@ -60,6 +60,6 @@ public class Garland extends Decorator {
 
   @Override
   public String toString() {
-    return super.toString() + " Garland{" + "length=" + length + '}';
+    return super.toString() + "\nGarland{" + "length=" + length + '}';
   }
 }
