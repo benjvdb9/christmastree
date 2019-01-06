@@ -28,10 +28,10 @@ public class Balls extends Decorator {
         treeDecorator.getColor() == null ? "" : treeDecorator.getColor() + " BallsColor: " + "Red");
     setDescription(treeDecorator.getDescription() + " BallsDecorator: " + "Balls");
     setPrice(treeDecorator.getPrice() + 20.99);
-    /*setMaterial(
+    setMaterial(
         getMaterial() == null
             ? "" + " BallsMaterial: " + "Plastic"
-            : getMaterial() + " BallsMaterial: " + "Plastic");*/
+            : getMaterial() + " BallsMaterial: " + "Plastic");
     setSize(
         getSize() == null ? "" + " BallsSize: " + "Small" : getSize() + " BallsSize: " + "Small");
   }
