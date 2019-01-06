@@ -1,5 +1,3 @@
-package christmastree;
-
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -174,8 +172,9 @@ public class ClientForm extends JFrame {
 
             if(validationNom(tfnom.getText())){
                 if (validationNom(tfprenom.getText())){
-
-                    Order order = new Order(tfrue.getText()+"\n"+ tfcomm.getText(), tfnom.getText()+"  ", tfprenom.getText());
+                    Customer customer = new Customer(tfprenom.getText(), tfnom.getText());
+                    DeliveryAddress address = new DeliveryAddress(tfrue.getText()+"\n"+ tfcomm.getText());
+                    Order order = new Order(customer, address);
                     new Compte(order);
                     frame.dispose();
 
