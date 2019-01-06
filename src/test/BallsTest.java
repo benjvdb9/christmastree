@@ -88,7 +88,7 @@ public class BallsTest {
     }
    
     @Test
-    public void testGeSize() {
+    public void testGetSize() {
         assertEquals(ball1.getSize()," BallsSize: small");
     }
 }
