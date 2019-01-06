@@ -41,9 +41,9 @@ public class ClientMain {
     return order;
   }
 
-    public static void resetMany() {
-      manyDecoration = null;
-    }
+  public static void resetMany() {
+    manyDecoration = null;
+  }
 
   /**
    * this class is used to choose which decoration to be added on the tree.
@@ -71,8 +71,7 @@ public class ClientMain {
       choiceDecoration = asker.ask("Choose a decoration please: ");
 
       switch (choiceDecoration) {
-        case "a":
-        {
+        case "a": {
           if (manyDecoration == null) {
             decoration = new Balls(chrismasTree);
           } else {
@@ -85,8 +84,7 @@ public class ClientMain {
         }
           break;
 
-        case "b":
-        {
+        case "b": {
           System.out.println("Garland Options: ");
           System.out.println("a: Electric Garland");
           System.out.println("b: Synthetic Garland");
@@ -111,8 +109,7 @@ public class ClientMain {
               }
                 break;
 
-              case "b":
-              {
+              case "b": {
 
                 if (manyDecoration == null) {
                   decoration = new SyntheticGarland(chrismasTree);
@@ -132,9 +129,7 @@ public class ClientMain {
         }
           break;
 
-        case "c":
-        {
-          
+        case "c": {
           if (manyDecoration == null) {
             decoration = new Candle(chrismasTree);
             manyDecoration = decoration;
@@ -148,7 +143,7 @@ public class ClientMain {
           break;
 
         case "d": {
-            System.out.println("debugging");
+          System.out.println("debugging");
         }
           break;
 
@@ -345,8 +340,7 @@ public class ClientMain {
         }
             break;
 
-        case "2":
-        {
+        case "2": {
           flag = 1;
           switch (choiceTree) {
             case "a": {

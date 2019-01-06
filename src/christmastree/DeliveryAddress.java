@@ -5,21 +5,22 @@
  */
 
 /**
+ * Address container class.
  *
  * @author mohamad
  */
 public class DeliveryAddress {
-    String address;
+  String address;
 
-    public DeliveryAddress(String address) {
-        this.address = address;
-    }
+  public DeliveryAddress(String address) {
+    this.address = address;
+  }
 
-    public String getAddress() {
-        return address;
-    }
+  public String getAddress() {
+    return address;
+  }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+  public void setAddress(String address) {
+    this.address = address;
+  }
 }

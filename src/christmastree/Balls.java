@@ -62,7 +62,7 @@ public class Balls extends Decorator {
 
     setPrice(treeDecorator.getPrice() + price);
     this.material = "" + " BallsMaterial: " + material;
-        /*getMaterial() == null
+    /*getMaterial() == null
             ? "" + " BallsMaterial: " + material
             : getMaterial() + " BallsMaterial: " + material;*/
     this.size = getSize() == null ? "" + " BallsSize: " + size : getSize() + " BallsSize: " + size;

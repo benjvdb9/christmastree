@@ -27,13 +27,17 @@ public class Order {
     this.customer = customer;
   }
 
-  public void setDeliveryAdress(String address) { deliveryAddress.setAddress(address); }
+  public void setDeliveryAdress(String address) {
+    deliveryAddress.setAddress(address);
+  }
 
   public String getDeliveryAddress() {
     return deliveryAddress.getAddress();
   }
 
-  public void setName(String name) { customer.setName(name); }
+  public void setName(String name) {
+    customer.setName(name);
+  }
 
   public String getName() {
     return customer.getName();

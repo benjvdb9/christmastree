@@ -19,11 +19,14 @@ public class Bill {
 
   private FileWriter wr;
   private BufferedWriter bf;
-  private PrintWriter pf ;
+  private PrintWriter pf;
   private ChrismasTree toBePrinted;
   private Order order;
   // private String[] elements;
+
   /**
+   * Generates a bill for printing.
+   *
    * @param toBePrinted the class whiwch contains all info needed to make the file
    * @param order the class which contains the info about the client and the order
    * @param path the path to the file's location
@@ -40,18 +43,23 @@ public class Bill {
     this.toBePrinted = toBePrinted;
     this.order = order;
   }
+
   /**
+   * Close all files.
+   *
    * @throws IOException this is used in case the buffer and writer are already closed
    *
    *     this method closes the writer, buffer and printer so ressources used are released.
    */
   public void close() throws IOException {
-
     this.pf.close();
     this.bf.close();
     this.wr.close();
   }
+
   /**
+   * Add a string to the file.
+   *
    * @param newString the string to be added in the file
    *
    *     this method adds the string in the parameters directly inside the file.
@@ -59,7 +67,10 @@ public class Bill {
   public void addString(String newString) {
     pf.print(newString);
   }
+
   /**
+   * Add a line to the file.
+   *
    * @param newString this string is to be added in the file
    *
    *     this methods adds ths stirng in the parameters and then goes to the next lien.
@@ -67,6 +78,7 @@ public class Bill {
   public void addStringLine(String newString) {
     pf.println(newString);
   }
+
   /** this methods adds the client's info.
    *
    */
@@ -76,7 +88,10 @@ public class Bill {
     addStringLine("date : " + order.getDate());
     addStringLine("");
   }
+
   /**
+   * Add a tree to the file.
+   *
    * @param treeType the type of the tree commanded
    * @param treeColor the color of the tree commanded
    *
@@ -85,7 +100,10 @@ public class Bill {
   public void addTree(String treeType, String treeColor) {
     addStringLine("1x " + treeType + " " + treeColor);
   }
+
   /**
+   * Add a decorator to the file.
+   *
    * @param description the array of the types of decoration
    * @param color the array of the color of decoration
    *
@@ -98,12 +116,14 @@ public class Bill {
     // variable++;
     //}
   }
+
   /** this method adds the price in the file.
    *
    */
   public void addPrice() {
     addStringLine("      ¨Price : " + String.valueOf(this.toBePrinted.getPrice()));
   }
+
   /** this methods adds the title in the file.
    *
    */
@@ -112,7 +132,10 @@ public class Bill {
     addStringLine("");
     addStringLine("");
   }
+
   /**
+   * Adds the descriptors.
+   *
    * @return elementsList the array of descitption on tree dans decoration
    *
    *     this method parse the descritpion of the description.
@@ -128,6 +151,7 @@ public class Bill {
     String[] elementsList = tampon.split(" ");
     return elementsList;
   }
+
   /**
    * this methods parses the color string.
    * @return elementsList the array of the colors of tree and decorations
@@ -145,6 +169,7 @@ public class Bill {
     String[] elementsList = tampon.split(" ");
     return elementsList;
   }
+
   /**
    * this methods supress parts of a string.
    * @param toBeCut the string to have replacment
@@ -155,6 +180,7 @@ public class Bill {
   public String stringReplacer(String toBeCut, String change) {
     return toBeCut.replace(change, "");
   }
+
   /**
    * this method adds all the elements in the file.
    * @throws IOException if file can't be created or open

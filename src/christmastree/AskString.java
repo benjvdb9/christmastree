@@ -33,6 +33,7 @@ public class AskString {
     out.println(message);
     return scanner.nextLine();
   }
+
   /**
    * display a message and waits for a boolean input.
    * @param message to be displayed
@@ -42,6 +43,7 @@ public class AskString {
     out.println(message);
     return scanner.nextBoolean();
   }
+
   /**
    * display a message and waits for a double input.
    * @param message to be displayed
@@ -51,6 +53,7 @@ public class AskString {
     out.println(message);
     return scanner.nextDouble();
   }
+
   /**
    * display a message and waits for an int input.
    * @param message to be displayed
@@ -60,5 +63,4 @@ public class AskString {
     out.println(message);
     return scanner.nextInt();
   }
-
 }
