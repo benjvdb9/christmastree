@@ -12,9 +12,9 @@ import org.junit.BeforeClass;
  *
  * @author MediaMonster
  */
-public class BillTest {
+public class DeliveryAddressTest {
     
-    String address = 'test address';
+    String address = "test address";
     DeliveryAddress deliveryAddress1 = new DeliveryAddress(address);
     DeliveryAddress deliveryAddress2 = new DeliveryAddress(address);
 
@@ -25,7 +25,7 @@ public class BillTest {
 
     @Test
     public void testSetAddress() {
-        String test = 'test';
+        String test = "test";
         deliveryAddress2.setAddress(test);
         assertEquals(deliveryAddress2.getAddress(), test);
     }
