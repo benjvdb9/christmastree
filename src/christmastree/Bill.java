@@ -94,8 +94,8 @@ public class Bill {
   public void addDecorator(String[] description, String[] color) {
     int variable = 1;
     //while (variable < description.length) {
-     // addStringLine(String.format("1x %s %s", description[variable], color[variable]));
-     // variable++;
+    // addStringLine(String.format("1x %s %s", description[variable], color[variable]));
+    // variable++;
     //}
   }
   /** this method adds the price in the file.
