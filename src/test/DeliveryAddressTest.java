@@ -19,8 +19,13 @@ public class DeliveryAddressTest {
     DeliveryAddress deliveryAddress2 = new DeliveryAddress(address);
 
     @Test
+    public void testDeliveryAddress() {
+        assertNotNull(deliveryAddress1);
+    }
+
+    @Test
     public void  testGetAddress() {
-        assertEquals(deliveryAddress.getAddress(), address);
+        assertEquals(deliveryAddress1.getAddress(), address);
     }
 
     @Test
