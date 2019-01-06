@@ -26,7 +26,7 @@ public class BillTest {
     @Test
     public void testSetAddress() {
         String test = 'test';
-        deliveryAddress2.setAddress('test');
+        deliveryAddress2.setAddress(test);
         assertEquals(deliveryAddress2.getAddress(), test);
     }
 }
