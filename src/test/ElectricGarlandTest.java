@@ -86,11 +86,17 @@ public class ElectricGarlandTest {
         assertEquals(electricGarland1.getLength(),40,0.0f);
     }
     
-     @Test
+    @Test
     public void testGetHasBlink() {
         assertEquals(electricGarland1.isHasBlink(),true);
     }
-    
-    
-  
+
+    @Test
+    public void testToString() {
+        String expected = "ChrismasTree{TreeDescriptionArtificialTree ElectricGarlandDecorator: electricGarland," +
+                " price=190.5,TreeColorred ElectricGarlandColor: Yellow}" +
+                " Garland{length=40.0} ElectricGarland{hasBlink=true}";
+        String actual = electricGarland1.toString();
+        assertEquals(expected, actual);
+    }
 }
