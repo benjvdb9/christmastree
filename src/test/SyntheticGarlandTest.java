@@ -28,4 +28,16 @@ public class SyntheticGarlandTest {
         String actual = garland.toString();
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void testConditionals() {
+        ArtificialTree tree = new ArtificialTree();
+        tree.setColor(null);
+        assertEquals( null, tree.getColor());
+        SyntheticGarland g1 = new SyntheticGarland(tree);
+        assertEquals( "", g1.getColor());
+
+        SyntheticGarland g2 = new SyntheticGarland("", "", "", 0, 1, tree);
+        assertEquals( "", g2.getColor());
+    }
 }

@@ -99,4 +99,16 @@ public class ElectricGarlandTest {
         String actual = electricGarland1.toString();
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void testConditionals() {
+        ArtificialTree tree = new ArtificialTree();
+        tree.setColor(null);
+        assertEquals( null, tree.getColor());
+        ElectricGarland g1 = new ElectricGarland(tree);
+        assertEquals( "", g1.getColor());
+
+        ElectricGarland g2 = new ElectricGarland("", "", 0, true, 1, tree);
+        assertEquals( "", g2.getColor());
+    }
 }
