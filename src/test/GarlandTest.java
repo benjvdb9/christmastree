@@ -85,6 +85,16 @@ public class GarlandTest {
     public void testGetLength() {
         assertEquals(garland1.getLength(),40,0.0f);
     }
-    
-  
+
+    @Test
+    public void testConditionals() {
+        ArtificialTree tree = new ArtificialTree();
+        tree.setColor(null);
+        assertEquals( null, tree.getColor());
+        Garland g1 = new Garland(tree);
+        assertEquals( "", g1.getColor());
+
+        Garland g2 = new Garland("", "", 0, 1, tree);
+        assertEquals( "", g2.getColor());
+    }
 }
