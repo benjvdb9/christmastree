@@ -69,7 +69,7 @@ public class Balls extends Decorator {
         ? "" + " BallsMaterial: " + material
         : getMaterial() + " BallsMaterial: " + material;*/
     this.size = "" + " BallsSize: " + size;
-    /*this.size = getSize() == null ? "" + " BallsSize: " + size : getSize() + " BallsSize: " + size;*/
+    //this.size=getSize() == null ? "" + " BallsSize: " + size : getSize() + " BallsSize: " + size;
   }
 
   // Getters and setters
