@@ -54,7 +54,7 @@ public class AskStringTest {
     public void ask() {
         when(asker.ask("test suite?")).thenReturn("a");
         String returns = testAskString();
-        assertEquals("string", returns);
+        assertEquals("1", returns);
     }
 
     @Test
@@ -66,7 +66,7 @@ public class AskStringTest {
 
     @Test
     public void askDouble() {
-        when(asker.askDouble("test suite?")).thenReturn(52.0);
+        when(asker.askDouble("test suite?")).thenReturn((double)52);
         double returns = testAskDouble();
         assertEquals(1, returns, 0.1);
     }
