@@ -28,10 +28,11 @@ public class Balls extends Decorator {
         treeDecorator.getColor() == null ? "" : treeDecorator.getColor() + " BallsColor: " + "Red");
     setDescription(treeDecorator.getDescription() + " BallsDecorator: " + "Balls");
     setPrice(treeDecorator.getPrice() + 20.99);
-    setMaterial(
+    setMaterial("" + " BallsMaterial: " + "Plastic");
+    /*setMaterial(
         getMaterial() == null
             ? "" + " BallsMaterial: " + "Plastic"
-            : getMaterial() + " BallsMaterial: " + "Plastic");
+            : getMaterial() + " BallsMaterial: " + "Plastic");*/
     setSize(
         getSize() == null ? "" + " BallsSize: " + "Small" : getSize() + " BallsSize: " + "Small");
   }
@@ -61,10 +62,11 @@ public class Balls extends Decorator {
     setDescription(treeDecorator.getDescription() + " BallsDecorator: " + description);
 
     setPrice(treeDecorator.getPrice() + price);
-    this.material =
+    this.material = "" + " BallsMaterial: " + material;
+    /*this.material =
       getMaterial() == null
         ? "" + " BallsMaterial: " + material
-        : getMaterial() + " BallsMaterial: " + material;
+        : getMaterial() + " BallsMaterial: " + material;*/
     this.size = getSize() == null ? "" + " BallsSize: " + size : getSize() + " BallsSize: " + size;
   }
 
