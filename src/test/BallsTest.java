@@ -100,6 +100,18 @@ public class BallsTest {
     }
 
     @Test
+    public void testConditionals() {
+        ArtificialTree tree = new ArtificialTree();
+        tree.setColor(null);
+        assertEquals( null, tree.getColor());
+        Balls b1 = new Balls(tree);
+        assertEquals( "", b1.getColor());
+
+        Balls b2 = new Balls("", "", 2, "", "", tree);
+        assertEquals( "", b2.getColor());
+    }
+
+    @Test
     public void testSetMaterial() {
         ball1.setMaterial("TEST");
         ball2.setMaterial("TEST2");
