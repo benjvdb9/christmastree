@@ -41,9 +41,7 @@ public class ClientMain {
     return order;
   }
 
-  public static void resetMany() {
-    manyDecoration = null;
-  }
+  public static void resetMany() { manyDecoration = null; }
 
   /**
    * this class is used to choose which decoration to be added on the tree.

@@ -117,4 +117,23 @@ public class ClientMainTest {
                 " SyntheticGarlandColor: blouge} Garland{length=0.0} SyntheticGarland{" +
                 " SyntheticGarlandPaillette: Circle}");
     }
+
+    @Test
+    public void standardMultipleTest() throws Exception {
+
+        AskString asker = mock(AskString.class);
+        when(asker.ask("Choose a decoration please: ")).thenReturn("b","q");
+        when(asker.ask("Choose a Garland decorations options : ")).thenReturn("b","q");
+        when(asker.ask("description: ")).thenReturn("test");
+        when(asker.askDouble("price: ")).thenReturn(100.0);
+        when(asker.ask("color: ")).thenReturn("blouge");
+        when(asker.askDouble("Length : ")).thenReturn(0.0);
+        when(asker.ask("paillette : ")).thenReturn("Circle");
+        Decorator deco = client.treeDecorationPersonalized(
+                new ArtificialTree("artificiel",23.8,"jaune","bisphenol A"),asker,"b");
+        assertEquals(deco.toString(),"ChrismasTree{TreeDescriptionartificiel " +
+                "SyntheticGarlandDecorator: test, price=123.8,TreeColorjaune" +
+                " SyntheticGarlandColor: blouge} Garland{length=0.0} SyntheticGarland{" +
+                " SyntheticGarlandPaillette: Circle}");
+    }
 }

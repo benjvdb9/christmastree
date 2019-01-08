@@ -2,9 +2,7 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.util.Scanner;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;

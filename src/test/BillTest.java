@@ -21,14 +21,24 @@ public class BillTest {
     Customer customer = new Customer("John", "Doe");
     DeliveryAddress deliveryAddress = new DeliveryAddress("New York");
     Order order = new Order(customer, deliveryAddress);
+    Bill bill;
 
     @Before
     public void init() throws IOException {
-        Bill bill = new Bill(treeDecorator, order,"./test");
+        bill = new Bill(treeDecorator, order,"./test");
     }
 
     @Test
-    public void  testBallsWithArguments() {
-        //assertNotNull(ball1);
+    public void  closeTest() throws IOException{
+        bill.close();
+        Boolean closed = false;
+
+        try {
+            bill.addString("test");
+        } catch(Error e) {
+            closed = true;
+        }
+
+        //assertTrue(closed);
     }
 }
