@@ -113,7 +113,6 @@ public class BallsTest {
 
     @Test
     public void testSetMaterial() {
-        double test = 52;
         ball1.setMaterial("TEST");
         ball2.setMaterial("TEST2");
         assertEquals(ball1.getMaterial(), "TEST");

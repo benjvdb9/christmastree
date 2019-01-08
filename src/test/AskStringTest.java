@@ -1,12 +1,19 @@
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.util.Scanner;
+
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class AskStringTest {
     AskString asker = mock(AskString.class);
+    InputStream original_in = System.in;
+    ByteArrayInputStream new_in = new ByteArrayInputStream("test".getBytes());
 
     public String testAskString() {
         String input = asker.ask("test suite?");
