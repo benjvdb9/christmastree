@@ -92,16 +92,13 @@ public class CandleTest {
 
     @Test
     public void testConditionals() {
-        ArtificialTree tree1 = new ArtificialTree();
-        tree1.setColor(null);
-        assertEquals( null, tree1.getColor());
-        Candle candle1 = new Candle(tree1);
+        ArtificialTree tree = new ArtificialTree();
+        tree.setColor(null);
+        assertEquals( null, tree.getColor());
+        Candle candle1 = new Candle(tree);
         assertEquals( "", candle1.getColor());
 
-        ArtificialTree tree2 = new ArtificialTree("", 1, "", "");
-        tree2.setColor(null);
-        assertEquals(null, tree2.getColor());
-        Candle candle2 = new Candle(tree2);
+        Candle candle2 = new Candle("", "", 2, 3, "", tree);
         assertEquals( "", candle2.getColor());
     }
 
