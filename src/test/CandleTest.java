@@ -7,6 +7,7 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
+import org.mockito.internal.matchers.Null;
 
 /**
  *
@@ -87,6 +88,21 @@ public class CandleTest {
     public void lifetimeTestSuite() {
         candle1.setLifeTime(99);
         assertEquals(99, candle1.getLifeTime());
+    }
+
+    @Test
+    public void testConditionals() {
+        ArtificialTree tree1 = new ArtificialTree();
+        tree1.setColor(null);
+        assertEquals( null, tree1.getColor());
+        Candle candle1 = new Candle(tree1);
+        assertEquals( "", candle1.getColor());
+
+        ArtificialTree tree2 = new ArtificialTree("", 1, "", "");
+        tree2.setColor(null);
+        assertEquals(null, tree2.getColor());
+        Candle candle2 = new Candle(tree2);
+        assertEquals( "", candle2.getColor());
     }
 
     @Test
