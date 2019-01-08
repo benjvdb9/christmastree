@@ -33,8 +33,9 @@ public class Balls extends Decorator {
         getMaterial() == null
             ? "" + " BallsMaterial: " + "Plastic"
             : getMaterial() + " BallsMaterial: " + "Plastic");*/
-    setSize(
-        getSize() == null ? "" + " BallsSize: " + "Small" : getSize() + " BallsSize: " + "Small");
+    setSize("" + " BallsSize: " + "Small");
+    /*setSize(
+        getSize() == null ? "" + " BallsSize: " + "Small" : getSize() + " BallsSize: " + "Small");*/
   }
 
   /**
@@ -67,7 +68,8 @@ public class Balls extends Decorator {
       getMaterial() == null
         ? "" + " BallsMaterial: " + material
         : getMaterial() + " BallsMaterial: " + material;*/
-    this.size = getSize() == null ? "" + " BallsSize: " + size : getSize() + " BallsSize: " + size;
+    this.size = "" + " BallsSize: " + size;
+    /*this.size = getSize() == null ? "" + " BallsSize: " + size : getSize() + " BallsSize: " + size;*/
   }
 
   // Getters and setters
