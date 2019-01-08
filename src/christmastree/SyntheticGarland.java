@@ -26,10 +26,11 @@ public class SyntheticGarland extends Garland {
     setDescription(treeDecorator.getDescription() + " SyntheticGarlandDecorator: " + "Garland");
     setPrice(treeDecorator.getPrice() + 10.99);
     setLength(15);
-    setPaillette(
+    setPaillette("" + " SyntheticGarlandPaillette: " + "Square");
+    /*setPaillette(
         getPaillette() == null
             ? "" + " SyntheticGarlandPaillette: " + "Square"
-            : getPaillette() + " SyntheticGarlandPaillette: " + "Square");
+            : getPaillette() + " SyntheticGarlandPaillette: " + "Square");*/
   }
 
   /**
@@ -56,10 +57,11 @@ public class SyntheticGarland extends Garland {
     setDescription(treeDecorator.getDescription() + " SyntheticGarlandDecorator: " + description);
     setPrice(treeDecorator.getPrice() + price);
     setLength(length);
-    this.paillette =
+    this.paillette = "" + " SyntheticGarlandPaillette: " + paillette;
+    /*this.paillette =
         getPaillette() == null
             ? "" + " SyntheticGarlandPaillette: " + paillette
-            : getPaillette() + " SyntheticGarlandPaillette:: " + paillette;
+            : getPaillette() + " SyntheticGarlandPaillette:: " + paillette;*/
   }
 
   // Getters and setters

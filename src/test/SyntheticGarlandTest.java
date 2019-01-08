@@ -19,4 +19,13 @@ public class SyntheticGarlandTest {
     public void getPaillette() {
         assertEquals(garland.getPaillette()," SyntheticGarlandPaillette: Square");
     }
+
+    @Test
+    public void testToString() {
+        String expected = "ChrismasTree{TreeDescriptionartificiel SyntheticGarlandDecorator: Garland, price=34.79," +
+                "TreeColorjaune SyntheticGarlandColor: yellow} Garland{length=15.0} SyntheticGarland" +
+                "{ SyntheticGarlandPaillette: Square}";
+        String actual = garland.toString();
+        assertEquals(expected, actual);
+    }
 }
