@@ -27,12 +27,14 @@ public class Candle extends Decorator {
             ? ""
             : treeDecorator.getColor() + " CandleColor: " + "White");
     setDescription(treeDecorator.getDescription() + " CandleDecorator: " + "Candle");
-    setPrice(treeDecorator.getPrice() + 16.99);
+    double DEFAULT_PRICE = 16.99;
+    setPrice(treeDecorator.getPrice() + DEFAULT_PRICE);
     setLifeTime(5);
-    setParfum(
+    setParfum("" + " CandleParfum: " + "Senteurs d'inspiration");
+    /*setParfum(
         getParfum() == null
             ? "" + " CandleParfum: " + "Senteurs d'inspiration"
-            : getParfum() + " CandleParfum: " + "Senteurs d'inspiration");
+            : getParfum() + " CandleParfum: " + "Senteurs d'inspiration");*/
   }
 
   /**
@@ -61,10 +63,11 @@ public class Candle extends Decorator {
     setDescription(treeDecorator.getDescription() + " CandleDecorator: " + description);
     setPrice(treeDecorator.getPrice() + price);
     this.lifeTime = lifeTime;
-    this.parfum =
+    this.parfum = "" + " CandleParfum: " + parfum;
+    /*this.parfum =
         getParfum() == null
             ? "" + " CandleParfum: " + parfum
-            : getParfum() + " CandleParfum: " + parfum;
+            : getParfum() + " CandleParfum: " + parfum;*/
   }
 
   // Getters and Setters

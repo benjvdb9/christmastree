@@ -77,11 +77,23 @@ public class CandleTest {
     public void testGetNotParfum() {
         assertNotEquals(candle1.getParfum(),"Senteurs d'inspiration");
     }
-   
+
     @Test
     public void testGetparfum() {
         assertEquals(candle1.getParfum()," CandleParfum: Senteurs d'inspiration");
     }
-    
- 
+
+    @Test
+    public void lifetimeTestSuite() {
+        candle1.setLifeTime(99);
+        assertEquals(99, candle1.getLifeTime());
+    }
+
+    @Test
+    public void testToString() {
+        String to_string = candle1.toString();
+        String expected = "ChrismasTree{TreeDescriptionArtificialTree CandleDecorator: candle, price=80.5," +
+                "TreeColorred CandleColor: Yellow}Candle{lifeTime=20, CandleParfum: Senteurs d'inspiration}";
+        assertEquals(expected, to_string);
+    }
 }
