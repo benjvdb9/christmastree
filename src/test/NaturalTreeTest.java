@@ -76,4 +76,16 @@ public class NaturalTreeTest {
         assertEquals(tree1.getTreeType()," TreeType: Omorika");
     }
 
+    @Test
+    public void testGetLifetime() {
+        assertEquals(20, tree1.getLifeTime());
+    }
+
+    @Test
+    public void testToString() {
+        String expected = " NaturalTree{ TreeType: Omorika, lifeTime=20}";
+        String actual = tree1.toString();
+        assertEquals(expected, actual);
+    }
+
 }
