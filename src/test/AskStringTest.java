@@ -59,21 +59,21 @@ public class AskStringTest {
 
     @Test
     public void askBool() {
-        when(asker.ask("test suite?")).thenReturn("true");
+        when(asker.askBool("test suite?")).thenReturn(true);
         Boolean returns = testAskBool();
         assertTrue(returns);
     }
 
     @Test
     public void askDouble() {
-        when(asker.ask("test suite?")).thenReturn("52");
+        when(asker.askDouble("test suite?")).thenReturn(52.0);
         double returns = testAskDouble();
-        assertEquals(1, returns);
+        assertEquals(1, returns, 0.1);
     }
 
     @Test
     public void askInt() {
-        when(asker.ask("test suite?")).thenReturn("74");
+        when(asker.askInt("test suite?")).thenReturn(74);
         int returns = testAskInt();
         assertEquals(1, returns);
     }
