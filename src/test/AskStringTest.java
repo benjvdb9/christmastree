@@ -31,7 +31,7 @@ public class AskStringTest {
     public double testAskDouble() {
         Double input = asker.askDouble("test suite?");
 
-        if (input == 52 && input.getClass().getSimpleName().equals("double")) {
+        if (input == 52.0) {
             return 1;
         } else {
             return 0;
@@ -66,7 +66,7 @@ public class AskStringTest {
 
     @Test
     public void askDouble() {
-        when(asker.askDouble("test suite?")).thenReturn((double)52);
+        when(asker.askDouble("test suite?")).thenReturn(52.0);
         double returns = testAskDouble();
         assertEquals(1, returns, 0.1);
     }
